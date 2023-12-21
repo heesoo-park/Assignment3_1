@@ -21,7 +21,7 @@ class SignUpActivity : AppCompatActivity() {
         btnSignup.setOnClickListener {
             // 입력해야하는 정보 중 하나라도 입력되지 않은 경우
             if (editName.text.isEmpty() || editId.text.isEmpty() || editPassword.text.isEmpty()) {
-                Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.btn_signup_error_text), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 

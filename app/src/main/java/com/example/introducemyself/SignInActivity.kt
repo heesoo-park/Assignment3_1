@@ -41,7 +41,7 @@ class SignInActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             // 아이디나 비밀번호를 입력하지 않은 경우
             if (editId.text.isEmpty() || editPassword.text.isEmpty()) {
-                Toast.makeText(this, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.btn_login_error_text1), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -50,11 +50,11 @@ class SignInActivity : AppCompatActivity() {
 
             // 아이디와 비밀번호 정보가 일치하지 않는 경우
             if (!findInfo(id, password)) {
-                Toast.makeText(this, "틀린 아이디 또는 비밀번호입니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.btn_login_error_text2), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.btn_login_success_text), Toast.LENGTH_SHORT).show()
             // Home 액티비티로 이동
             val intent = Intent(this, HomeActivity::class.java)
             intent.putExtra("name", name)

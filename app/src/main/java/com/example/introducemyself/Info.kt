@@ -8,14 +8,7 @@ object Info {
         info_list += Input(id, password)
     }
 
-    fun findInfo(id: String, password: String): Boolean {
-        if (info_list.contains(Input(id, password))) {
-
-            return true
-        }
-
-        return false
-    }
+    fun findInfo(id: String, password: String): Boolean = info_list.contains(Input(id, password))
 
     data class Input (
         val id: String,
